@@ -4,7 +4,7 @@ title: "Cook with Mina"
 description: "Cooking blog"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-baseurl: 'www.cookwithmina.com'
+baseurl: ''
 google_analytics: 'G-39CMZDHR4C'
 disqus: 'cookwithmina-com'
 mailchimp-list: 'https://cookwithmina.us20.list-manage.com/subscribe/post?u=563450f89329d06ec0b73ef4a&amp;id=9f7753efe7'
