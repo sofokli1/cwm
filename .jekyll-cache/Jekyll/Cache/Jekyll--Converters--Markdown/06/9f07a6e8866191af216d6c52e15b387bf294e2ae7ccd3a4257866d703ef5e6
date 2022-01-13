@@ -1,5 +1,4 @@
-I"<p>{% if page.url == “/” %}</p>
-
+I"�
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">
@@ -8,20 +7,10 @@
     </div>
     <div class="row">
 
-    {% for post in site.posts %}
-
-        {% if post.featured == true %}
-
-            {% include featuredbox.html %}
-
-        {% endif %}
-
-    {% endfor %}
+    
 
     </div>
 </section>
-
-<p>{% endif %}</p>
 
 <!-- Posts Index
 ================================================== -->
@@ -35,11 +24,7 @@
 
     <div class="row listrecent">
 
-        {% for post in paginator.posts %}
-
-        {% include postbox.html %}
-
-        {% endfor %}
+        
 
     </div>
 
@@ -50,7 +35,7 @@
 <div class="bottompagination">
 <div class="pointerup"><i class="fa fa-caret-up"></i></div>
 <span class="navigation" role="navigation">
-    {% include pagination.html %}
+    
 </span>
 </div>
 
