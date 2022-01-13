@@ -19,7 +19,7 @@
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-39CMZDHR4C"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -109,7 +109,7 @@ ga('send', 'pageview');
 <!-- Site Title
 ================================================== -->
 <div class="mainheading">
-    <h1 class="sitetitle">{{ site.name }}</h1>
+    <a href="{{ site.baseurl }}/index.html"><h1 class="sitetitle">{{ site.name }}</h1></a>
     <p class="lead">
         {{ site.description }}
     </p>
