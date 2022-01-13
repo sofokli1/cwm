@@ -21,6 +21,16 @@ a:hover {
     text-decoration: none;
 }
 
+a.sitetitle {
+    color: #212529;
+    transition: all 0.2s;
+}
+
+a:hover.sitetitle {
+    color: #ff0013;
+    text-decoration: none;
+}
+
 pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
