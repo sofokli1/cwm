@@ -21,7 +21,7 @@ authors:
     web: https://www.cookwithmina.com
     instagram: https://twitter.com/cookwithmina
     youtube: https://www.youtube.com/channel/UC9d2ER0kvzSM7lTEmfp9iuw
-    description: "I am Mina and I love cooking daily! Here I am sharing my easy and tasty recipes with you! If you want more subscribe to my YouTube channel! Enjoy!"
+    description: "I am Mina and I love cooking daily! Here I am sharing my easy and tasty recipes with you! If you want more, subscribe to my YouTube channel! Enjoy!"
 
 # Plugins
 plugins:
@@ -59,6 +59,6 @@ adsense-data-ad-client: "todo"
 adsense-data-ad-slot: "todo"
 
 # Lazy Images ("enabled" or "disabled")
-lazyimages: "enabled"
+lazyimages: "disabled"
 
 exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
