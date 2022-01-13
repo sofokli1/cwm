@@ -32,7 +32,9 @@ post_class: post-template
                         {% endif %}
                     </div>
                     <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
+                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a>
+                        <!-- <a target="_blank" href="{{ author.instagram }}" class="btn follow"><i class="fab fa-instagram"></i> Instagram</a> -->
+                        <a target="_blank" href="{{ author.youtube }}" class="btn follow"><i class="fab fa-youtube"></i> Youtube</a>
                         <span class="author-description">{{ author.description }}</span>
                     </div>
                 </div>
@@ -61,12 +63,20 @@ post_class: post-template
             {% endif %}
             <!-- End Featured Image -->
 
+            <!-- Post Featured Video -->
+            {% if page.videoId %}
+
+            <p><iframe width="1000" height="450" src="https://www.youtube.com/embed/{{ page.videoId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+            {% endif %}
+            <!-- End Featured Video -->
+
             <!-- Post Content -->
             <div class="article-post">
                 <!-- Toc if any -->
                 {% if page.toc %}
                     {% if page.beforetoc %}
-                        <p><em>{{page.beforetoc}}</em></p>
+                        <p>{{page.beforetoc}}</p>
                     {% endif %}
                     <div class="toc mt-4 mb-4 lead">
                         <h3 class="font-weight-bold">Summary</h3>
@@ -75,6 +85,18 @@ post_class: post-template
                 {% endif %}
                 <!-- End Toc -->
                 {{content}}
+
+                <!-- Post Thumb Image -->
+                {% if page.thumbImage %}
+
+                {% if site.lazyimages == "enabled" %}
+                <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.thumbImage contains "://" %}{{ page.thumbImage }}{% else %}{{ site.baseurl }}/{{ page.thumbImage }}{% endif %}" alt="{{ page.title }}">
+                {% else %}
+                <img class="featured-image img-fluid" src="{% if page.thumbImage contains "://" %}{{ page.thumbImage }}{% else %}{{ site.baseurl }}/{{ page.thumbImage }}{% endif %}" alt="{{ page.title }}">
+                {% endif %}
+
+                {% endif %}
+                <!-- End Thumb Image -->
             </div>
 
             <!-- Rating -->
@@ -87,7 +109,7 @@ post_class: post-template
             <!-- Post Date -->
             <p>
             <small>
-                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
+                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>
                 {% if page.last_modified_at %}
                 (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
                 {% endif %}
@@ -154,7 +176,7 @@ post_class: post-template
 <!--End Comments
 ================================================== -->
 
-<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first:
 https://search.google.com/structured-data/testing-tool/u/0/
 ================================================== -->
 {% if page.rating %}
